@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ blog.title }}</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 800px;
+            margin: 40px auto;
+            background: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.3);
+        }
+        a {
+            text-decoration: none;
+            color: #3498db;
+        }
+        .blogContent{
+            white-space: pre-wrap;
+            word-wrap: break-word; 
+        }
+    </style>
+</head>
+<body>
+    <h1>{{ blog.title }}</h1>
+    <p class="blogContent">{{ blog.content }}</p>
+    <br>
+    <a href="{{url_for('ExploreBlogs')}}">← Back to Explore</a>
+</body>
+</html>
+

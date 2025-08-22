@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='create.css') }}">
+    <title>Document</title>
+</head>
+<body>
+
+    <div class="create_blog_container">
+        <form action="/update/{{blog.id}}" method="POST">
+            <div class="blog_title">
+                <label for="title" class="label_title">Blog Title:</label>
+                <br>
+                <input type="text" id="title" name="title" value="{{blog.title}}" required>
+            </div>
+            <div class="blog_content">
+                <label for="content" class="label_content">Blog Content:</label>
+                <br>
+                <textarea id="content" name="content" required>{{blog.content | safe}}</textarea>
+            </div>
+            <div class="form_actions">
+                <button type="submit" class="publish_btn">Edit</button>
+                <a href="/manage_blogs/{{blog.id}}" class="Cancel_btn">Cancel</a>
+            </div>
+        </form>
+    </div>
+</body>
+</html>

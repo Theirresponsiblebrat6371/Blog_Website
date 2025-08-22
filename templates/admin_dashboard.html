@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='admin.css') }}">
+    <title>Dashboard</title>
+</head>
+<body>
+    <div class="Heading">
+        <h1>
+            Welcome to the Admin Dashboard, {{ username }}!
+        </h1>
+    </div>
+    <br>
+    <div class="create_btn">
+        <a href="{{ url_for('create_blog') }}">
+        
+            <button class="button">
+              <svg class="svgIcon" viewBox="-25 0 150 100">
+                <line x1="50" y1="10" x2="50" y2="90" stroke="white" stroke-width="15" stroke-linecap="round"/>
+                <line x1="10" y1="50" x2="90" y2="50" stroke="white" stroke-width="15" stroke-linecap="round"/>
+            
+              </svg>
+          
+            </button>
+        
+        </a>
+    </div>
+
+    <div class="posts">
+      <h2>Your posts</h2>
+        {% if message %}
+            <p>{{ message }}</p>
+        {% else %}
+            {% for blog in blogs %}
+                <a href="/manage_blogs/{{ blog.id }}" class="card">
+                    <h3>{{ blog.title }}</h3>
+                    <p class="blogContent">{{ blog.content[:120] }}...</p>
+                </a>
+            {% endfor %}
+        {% endif %}
+    </div>
+    
+    
+    <div class="explore">
+        <a href=" {{ url_for('ExploreBlogs') }} ">
+        
+            <button class="explorebutton" style="--clr: #7808d0">
+              <span class="explorebutton__icon-wrapper">
+                <svg
+                  viewBox="0 0 14 15"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                  class="explorebutton__icon-svg"
+                  width="10"
+                >
+                  <path
+                    d="M13.376 11.552l-.264-10.44-10.44-.24.024 2.28 6.96-.048L.2 12.56l1.488 1.488 9.432-9.432-.048 6.912 2.304.024z"
+                    fill="currentColor"
+                  ></path>
+                </svg>
+            
+                <svg
+                  viewBox="0 0 14 15"
+                  fill="none"
+                  width="10"
+                  xmlns="http://www.w3.org/2000/svg"
+                  class="explorebutton__icon-svg explorebutton__icon-svg--copy"
+                >
+                  <path
+                    d="M13.376 11.552l-.264-10.44-10.44-.24.024 2.28 6.96-.048L.2 12.56l1.488 1.488 9.432-9.432-.048 6.912 2.304.024z"
+                    fill="currentColor"
+                  ></path>
+                </svg>
+              </span>
+              Explore All
+            </button>
+        </a>
+
+    </div>
+
+    
+    
+    <div class="Logout">
+        <p>
+            <a href="/logout" class="logout_btn">Logout</a>
+        </p>
+    </div>
+
+    
+    
+
+    
+</body>
+</html>

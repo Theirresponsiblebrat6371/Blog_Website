@@ -1,0 +1,64 @@
+.create_blog_container {
+    margin-top: 50px;
+}
+
+#title{
+    width: 100%;
+    padding: 10px;
+    margin-top: 5px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+    font-size: 16px;
+}
+
+#content {
+    width: 100%;
+    height: 500px;
+    padding: 10px;
+    margin-top: 5px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+    font-size: 16px;
+    resize: vertical;
+}
+
+
+.publish_btn {
+    background-color: #4CAF50;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.form_actions {
+    display: inline-flex;
+    gap: 50px;
+    margin-top: 10px;
+    
+}
+
+.Cancel_btn {
+    background-color: #f44336;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+    text-decoration: none;
+    text-align: center;
+}
+
+.label_title, .label_content {
+    font-weight: bold;
+    font-size: 25px;
+}
+
+.blog_content{
+    margin-top: 20px;
+}

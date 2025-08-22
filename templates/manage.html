@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ blog.title }}</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 800px;
+            margin: 40px auto;
+            background: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.3);
+        }
+        a {
+            text-decoration: none;
+            color: #3498db;
+        }
+        p{
+            white-space: pre-wrap;
+            word-wrap: break-word; 
+        }
+        .actionlinks {
+          display: flex;
+          gap: 20px; /* space between icons */
+          margin-bottom: 15px;
+        }
+
+        /* Icon links */
+        .iconlinks {
+          font-size: 20px;
+          color: #444;
+          text-decoration: none;
+          transition: color 0.3s ease;
+          position: relative;
+        }
+
+        /* Hover color changes */
+        .iconlinks:hover {
+          color: #007bff; /* blue for edit */
+        }
+
+        .iconlinks.delete:hover {
+          color: #e74c3c; /* red for delete */
+        }
+        .backlink{
+          text-decoration: none;
+          color: #555;
+          font-size: 14px;
+        }
+        
+        .backlink:hover {
+          color: #007bff;
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <h1>{{ blog.title }}</h1>
+        <p>{{ blog.content }}</p>
+        <br>
+        
+    </div>
+    <div class="actionlinks">
+        <a href="/update/{{blog.id}}" class="iconlinks" title="Edit">Edit Post
+            <i class="fas fa-edit"></i>
+        </a>
+        <a href="/delete/{{blog.id}}" class="iconlinks delete" title="Delete">Delete Post
+            <i class="fas fa-trash"></i>
+        </a>
+        <br>
+        <br>
+        
+    </div>
+
+    <div class="backtodashboard">
+        <a href="{{url_for('Dashboard')}}" class="backlink">← Back to Dashboard</a>
+    </div>
+    
+</body>
+</html>
+

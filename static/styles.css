@@ -1,0 +1,42 @@
+body{
+    margin : 0;
+}
+
+h1{
+    margin:0;
+}
+
+.Heading{
+    text-align: center;
+    margin-top: 150px;
+    font-size: 30px;
+}
+
+.Options{
+    text-align: center;
+    margin-top: 50px;
+    font-size: 35px;
+}
+
+.Login{
+    margin-top: 30px;
+    text-align: center;
+}
+
+.RegisterForm{
+    margin-top: 50px;
+    text-align: center;
+}
+
+.Logout{
+    margin-top: 30px;
+    text-align: center;
+}
+
+.logout_btn {
+    text-decoration: none;
+    color: white;
+    background-color: #007bff;
+    padding: 10px 20px;
+    border-radius: 5px;
+}   
